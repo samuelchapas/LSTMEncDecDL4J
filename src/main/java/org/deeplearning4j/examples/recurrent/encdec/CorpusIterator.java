@@ -76,7 +76,7 @@ public class CorpusIterator implements MultiDataSetIterator {
             List<Double> rowPred = new ArrayList<>(corpus.get(i + 1));
             rowPred.add(1.0); // add <eos> token
             
-            System.out.println("valuesRowIn " + rowIn);
+            //System.out.println("valuesRowIn " + rowIn);
             
             // replace the entire row in "input" using NDArrayIndex, it's faster than putScalar(); input is NOT made of one-hot vectors
             // because of the embedding layer that accepts token indexes directly

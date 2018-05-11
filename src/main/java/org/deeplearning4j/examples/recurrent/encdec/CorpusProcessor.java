@@ -53,6 +53,10 @@ public class CorpusProcessor {
             	//String[] lineSplit = line.toLowerCase().split(" ");
             	
             	if(line.length() > 0) {
+            		
+            		//if (!SPECIALS.contains(line.substring(line.length() - 1))) {
+                    //    line += ",";
+                    //}
             		processLine(line);
             	}//System.out.println("insideStartCopusProcessor " + line);
                 /**
@@ -97,10 +101,11 @@ public class CorpusProcessor {
         String[] words = lastLine.split("[ \t]");
         
         //for(String word:words) {
-        //	System.out.println("word " + word);
+        	//System.out.println("word " + word);
         //}
         
         for (String word : words) {
+        	//System.out.println("word " + word);
             if (!word.isEmpty()) {
                 boolean specialFound = true;
                 while (specialFound && !word.isEmpty()) {
@@ -108,6 +113,7 @@ public class CorpusProcessor {
                         int idx = SPECIALS.indexOf(word.charAt(i));
                         specialFound = false;
                         if (idx >= 0) {
+                        	
                             String word1 = word.substring(0, i);
                             if (!word1.isEmpty()) {
                                 addWord(resultCollection, word1);
@@ -117,6 +123,7 @@ public class CorpusProcessor {
                             }
                             word = word.substring(i + 1);
                             specialFound = true;
+                            //System.out.println("special " + idx + " word " + word + " word1 " + word1);
                             break;
                         }
                     }

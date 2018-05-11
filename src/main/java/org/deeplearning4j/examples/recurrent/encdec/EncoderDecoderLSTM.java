@@ -298,9 +298,9 @@ public class EncoderDecoderLSTM {
         long lastSaveTime = System.currentTimeMillis();
         long lastTestTime = System.currentTimeMillis();
         
-        for(List<Double> each: corpus) {
-        	System.out.println(each + " " + each.size());
-        }
+        //for(List<Double> each: corpus) {
+        //	System.out.println(each + " " + each.size());
+        //}
         
         CorpusIterator logsIterator = new CorpusIterator(corpus, MINIBATCH_SIZE, MACROBATCH_SIZE, dict.size(), ROW_SIZE);
         for (int epoch = 1; epoch < 10000; ++epoch) {
@@ -395,7 +395,7 @@ public class EncoderDecoderLSTM {
         double[] decodeArr = new double[dict.size()];
         decodeArr[2] = 1;
         INDArray decode = Nd4j.create(decodeArr, new int[] { 1, dict.size(), 1 });
-        net.feedForward(new INDArray[] { in, decode }, false);
+        net.feedForward(new INDArray[] { in, decode }, false, false);
         org.deeplearning4j.nn.layers.recurrent.GravesLSTM decoder = (org.deeplearning4j.nn.layers.recurrent.GravesLSTM) net
                 .getLayer("decoder");
         Layer output = net.getLayer("output");
