@@ -218,6 +218,8 @@ public class CharIterator implements DataSetIterator {
                 
             input.putScalar(new int[]{0,currCharIdx,i}, 1.0);
             labels.putScalar(new int[]{0,nextCharIdx,i}, 1.0);
+            
+            System.out.println(input);
             //currCharIdx = nextCharIdx;
             
         }

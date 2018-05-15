@@ -87,7 +87,9 @@ public class CompGraphRNN {
 
         //Set up network configuration:
         ComputationGraphConfiguration conf = new NeuralNetConfiguration.Builder()
-            .seed(12345)
+            //.seed(12345)
+        	.miniBatch(false)
+        	//.seed(123)
             .l2(0.001)
             .weightInit(WeightInit.XAVIER)
             .updater(new RmsProp(0.1))
@@ -203,7 +205,7 @@ public class CompGraphRNN {
 		//DataSet trainingData = new DataSet(input, labels);
 
 		// some epochs
-		for (int epoch = 0; epoch < 1000; epoch++) {
+		for (int epoch = 0; epoch < 200; epoch++) {
 
 			System.out.println("Epoch " + epoch);
 

@@ -50,7 +50,7 @@ public class BasicRNNExample {
 		for (char c : LEARNSTRING)
 			LEARNSTRING_CHARS.add(c);
 		LEARNSTRING_CHARS_LIST.addAll(LEARNSTRING_CHARS);
-
+		System.out.println("LEARNSTRING_CHARS " + LEARNSTRING_CHARS.size() + " LEARNSTRING_CHARS_LIST " + LEARNSTRING_CHARS_LIST.size());
 		// some common parameters
 		NeuralNetConfiguration.Builder builder = new NeuralNetConfiguration.Builder();
 		builder.seed(123);
@@ -96,6 +96,7 @@ public class BasicRNNExample {
 		 */
 		// create input and output arrays: SAMPLE_INDEX, INPUT_NEURON,
 		// SEQUENCE_POSITION
+		
 		INDArray input = Nd4j.zeros(1, LEARNSTRING_CHARS_LIST.size(), LEARNSTRING.length);
 		INDArray labels = Nd4j.zeros(1, LEARNSTRING_CHARS_LIST.size(), LEARNSTRING.length);
 		// loop through our sample-sentence
@@ -106,10 +107,14 @@ public class BasicRNNExample {
 			char nextChar = LEARNSTRING[(samplePos + 1) % (LEARNSTRING.length)];
 			// input neuron for current-char is 1 at "samplePos"
 			input.putScalar(new int[] { 0, LEARNSTRING_CHARS_LIST.indexOf(currentChar), samplePos }, 1);
+			
+			//System.out.println( " lenght " + input.length() + " rows " + input.rows());
+			
 			// output neuron for next-char is 1 at "samplePos"
 			labels.putScalar(new int[] { 0, LEARNSTRING_CHARS_LIST.indexOf(nextChar), samplePos }, 1);
 			samplePos++;
 		}
+		
 		DataSet trainingData = new DataSet(input, labels);
 
 		// some epochs
@@ -139,9 +144,10 @@ public class BasicRNNExample {
                 // neuron, the neuron with the highest output has the highest
                 // chance to get chosen
                 int sampledCharacterIdx = Nd4j.getExecutioner().exec(new IMax(output), 1).getInt(0);
+                //int sampledCharacterChx = Nd4j.getExecutioner().exec(new IMax(output), 1).getInt(1);
 
                 // print the chosen output
-                System.out.print(LEARNSTRING_CHARS_LIST.get(sampledCharacterIdx));
+                System.out.print(LEARNSTRING_CHARS_LIST.get(sampledCharacterIdx).toString());
 
                 // use the last output as input
                 INDArray nextInput = Nd4j.zeros(LEARNSTRING_CHARS_LIST.size());

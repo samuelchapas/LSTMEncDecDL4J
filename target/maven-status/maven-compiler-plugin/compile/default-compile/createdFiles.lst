@@ -4,11 +4,13 @@ org/deeplearning4j/examples/recurrent/basic/BasicRNNExample.class
 org/deeplearning4j/examples/recurrent/encdec/CorpusProcessor.class
 flyKey/CharIterator.class
 org/deeplearning4j/examples/recurrent/character/GravesLSTMCharModellingExample.class
+flyKey/INDArrayTrial.class
 org/deeplearning4j/examples/recurrent/encdec/EncoderDecoderLSTM$3.class
 org/deeplearning4j/examples/recurrent/seq2seq/CustomSequenceIterator.class
 org/deeplearning4j/examples/recurrent/character/CompGraphLSTMExample.class
 flyKey/CompGraphRNN.class
 flyKey/Word2VecRawTextExample.class
+flyKey/NeuralNet.class
 org/deeplearning4j/examples/recurrent/encdec/EncoderDecoderLSTM.class
 org/deeplearning4j/examples/recurrent/seq2seq/Seq2SeqPredicter.class
 org/deeplearning4j/examples/recurrent/character/CharacterIterator.class

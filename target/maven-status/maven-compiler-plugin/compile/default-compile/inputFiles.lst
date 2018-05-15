@@ -1,5 +1,6 @@
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/org/deeplearning4j/examples/recurrent/seq2seq/CustomSequenceIterator.java
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/org/deeplearning4j/examples/recurrent/encdec/CorpusIterator.java
+/home/samuel/eclipseWorkspace/flyKey/src/main/java/flyKey/NeuralNet.java
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/org/deeplearning4j/examples/recurrent/character/CharacterIterator.java
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/org/deeplearning4j/examples/recurrent/seq2seq/Seq2SeqPredicter.java
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/org/deeplearning4j/examples/recurrent/character/GravesLSTMCharModellingExample.java
@@ -11,3 +12,4 @@
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/org/deeplearning4j/examples/recurrent/seq2seq/AdditionRNN.java
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/flyKey/CompGraphRNN.java
 /home/samuel/eclipseWorkspace/flyKey/src/main/java/flyKey/CharIterator.java
+/home/samuel/eclipseWorkspace/flyKey/src/main/java/flyKey/INDArrayTrial.java
